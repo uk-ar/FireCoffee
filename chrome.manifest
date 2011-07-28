@@ -1,0 +1,2 @@
+content  taghelper  content/
+overlay  chrome://browser/content/browser.xul  chrome://taghelper/content/overlay.xul
