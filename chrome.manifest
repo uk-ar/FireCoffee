@@ -1,2 +1,6 @@
 content  taghelper  content/
 overlay  chrome://browser/content/browser.xul  chrome://taghelper/content/overlay.xul
+
+content helloworld chrome/content/helloworld/ xpcnativewrappers=no
+overlay chrome://firebug/content/firebugOverlay.xul         chrome://helloworld/content/helloWorld.xul
+resource helloworld chrome/content/helloworld/

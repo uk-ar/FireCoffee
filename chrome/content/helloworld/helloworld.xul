@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript"
+	  src="chrome://helloworld/content/coffee-script.js"></script>
+  <script src="chrome://helloworld/content/helloWorld.js"
+	  type="application/x-javascript"/>
+
+  <commandset id="mainCommandSet">
+    <command id="cmd_hwMyButton"
+	     oncommand="Firebug.HelloWorldModel.onMyButton(FirebugContext)"/>
+    <!-- <command id="cmd_hwDisableNetMonitoring" -->
+    <!-- 	     oncommand="Firebug.HelloWorldModel.onDisableNetMonitoring(FirebugContext)"/> -->
+  </commandset>
+
+  <vbox id="fbLargeCommandBox">
+    <hbox id="fbCommandToolbar">
+      <!-- <toolbarbutton id="fbCmdLineRunButton" label="実行" class="toolbar-text-button fbInternational" tooltiptext="入力されたコマンドを実行" oncommand="Firebug.CommandLine.enter(Firebug.currentContext)"></toolbarbutton> -->
+      <!-- oncommand="Firebug.CommandLine.runCoffee(Firebug.currentContext)" -->
+      <toolbarbutton id="hwDisableNetMonitor"
+		     label="Run as Coffee"
+		     class="toolbar-text-button"
+		     tooltiptext="Run as CoffeeScript"
+		     oncommand="Firebug.HelloWorldModel.runCoffee(Firebug.currentContext)"
+		     insertafter="fbCmdLineRunButton"/>
+    </hbox>
+  </vbox>
+  <toolbar id="fbToolbar" align="center">
+    <hbox id="fbToolbarInner" insertbefore="fbDetachButton"
+	  flex="1" align="center">
+
+      <!-- net submenu -->
+      <hbox id="fbConsoleButtons">
+	<!-- <hbox id="fbNetButtons"> -->
+	<!-- <toolbarseparator/> -->
+	<!-- <toolbarbutton id="hwDisableNetMonitor" -->
+	<!-- 	       label="Disable Net Monitoring" -->
+	<!-- 	       class="toolbar-text-button" type="checkbox" -->
+	<!-- 	       tooltiptext="Press To Disable Network Monitoring" -->
+	<!-- 	       command="cmd_hwDisableNetMonitoring"/> -->
+      </hbox>
+      <!-- hello world menu's submenu -->
+      <hbox id="fbHelloWorldButtons" insertafter="fbNetButtons">
+	<toolbarseparator/>
+	<toolbarbutton id="hwMyButton"
+		       label="Say Hello" class="toolbar-text-button"
+		       tooltiptext="Push to say hello" command="cmd_hwMyButton"/>
+      </hbox>
+    </hbox>
+  </toolbar>
+</overlay>
