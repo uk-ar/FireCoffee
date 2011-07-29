@@ -59,7 +59,8 @@ FBL.ns(function() { with (FBL) {
 	      	 Firebug.CommandLine.enter(context, expr);
 	      	 Firebug.CommandLine.commandHistory.appendToHistory=ori;
 	        }catch(e){
-	      	 Firebug.Console.logFormatted(["SyntaxError:",e.message], context, "error", true);
+		  Firebug.Console.log(commandPrefix + " " + expr, context, "command", FirebugReps.Text);
+	      	  Firebug.Console.logFormatted(["SyntaxError:",e.message], context, "error", true);
 	        }
 	      }
 	       
